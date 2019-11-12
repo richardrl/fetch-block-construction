@@ -1,0 +1,7 @@
+from fetch_block_construction.envs.robotics.fetch.slide import FetchSlideEnv
+from fetch_block_construction.envs.robotics.fetch.pick_and_place import FetchPickAndPlaceEnv, FetchPickAndPlaceFixedEnv
+from fetch_block_construction.envs.robotics.fetch.push import FetchPushEnv
+from fetch_block_construction.envs.robotics.fetch.reach import FetchReachEnv
+from fetch_block_construction.envs.robotics.fetch.reach_fixed import FetchReachFixedGoalEnv
+
+from fetch_block_construction.envs.robotics.fetch.construction import FetchBlockConstructionEnv
