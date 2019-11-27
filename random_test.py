@@ -2,7 +2,7 @@ import gym
 import numpy as np
 from gym.wrappers.monitor import Monitor
 import fetch_block_construction
-env = gym.make('FetchBlockConstruction_17Blocks_IncrementalReward_DictstateObs_42Rendersize_TrueStackonly_AllCase-v1')
+env = gym.make('FetchBlockConstruction_2Blocks_SparseReward_DictstateObs_42Rendersize_FalseStackonly_SingletowerCase-v1')
 env = Monitor(env, directory="videos", force=True, video_callable=lambda x: x)
 
 env.env._max_episode_steps = 50

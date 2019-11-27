@@ -78,7 +78,7 @@ class FetchBlockConstructionEnv(fetch_env.FetchEnv, gym_utils.EzPickle):
         elif self.reward_type == 'block1only':
             return -(subgoal_distances[0] > self.distance_threshold).astype(np.float32)
         elif self.reward_type == "sparse":
-            reward = -np.min([(d > self.distance_threshold).astype(np.float32) for d in subgoal_distances], axis=0)
+            reward = np.min([-(d > self.distance_threshold).astype(np.float32) for d in subgoal_distances], axis=0)
             reward = np.asarray(reward)
             np.putmask(reward, reward == 0, self.gripper_pos_far_from_goals(achieved_goal, goal))
             return reward
