@@ -1,4 +1,5 @@
 from .colors import get_colors
+BASIC_COLORS = ["0 1 0", "1 1 0", "0.2 0.8 0.8", "0.8 0.2 0.8", "1.0 0.0 0.0", "0 0 0"]
 
 base = '''<?xml version="1.0" encoding="utf-8"?>
 <mujoco>
@@ -41,7 +42,10 @@ base = '''<?xml version="1.0" encoding="utf-8"?>
         '''
 
 def generate_xml(num_blocks):
-    colors = get_colors(num_blocks)
+    if num_blocks <= 6:
+        colors = BASIC_COLORS[:num_blocks]
+    else:
+        colors = get_colors(num_blocks)
     site_base = '<site name="target{id}" pos="0 0 0.5" size="0.02 0.02 0.02" rgba="{color} 0.3" type="sphere"></site>'
     block_base = '''<body name="object{id}" pos="0.025 0.025 0.025">
         <joint name="object{id}:joint" type="free" damping="0.01"></joint>
