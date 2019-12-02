@@ -410,6 +410,8 @@ class FetchBlockConstructionEnv(fetch_env.FetchEnv, gym_utils.EzPickle):
                 goal_objecti[:2] = objecti_xy
                 goal_objecti[2] = self.height_offset
                 goals.append(goal_objecti)
+        else:
+            raise NotImplementedError
 
         goals.append([0.0, 0.0, 0.0])
         return np.concatenate(goals, axis=0).copy()
