@@ -25,6 +25,17 @@ class RobotEnv(gym.GoalEnv):
         # print(fullpath)
         model = mujoco_py.load_model_from_path(fullpath)
         self.sim = mujoco_py.MjSim(model, nsubsteps=n_substeps)
+
+        # Turn off mocap
+        for body_idx1, val in enumerate(self.sim.model.body_mocapid):
+            if val != -1:
+                for geom_idx, body_idx2 in enumerate(self.sim.model.geom_bodyid):
+                    if body_idx1 == body_idx2:
+                        # Store transparency for later to show it.
+                        self.sim.extras[
+                            geom_idx] = self.sim.model.geom_rgba[geom_idx, 3]
+                        self.sim.model.geom_rgba[geom_idx, 3] = 0
+
         self.viewer = None
 
         self.metadata = {
