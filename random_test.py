@@ -16,7 +16,8 @@ while True:
     obs, done =env.reset(), False
     while not done:
         # env.render()
-        action = np.asarray([0, 0, 0, 0])
+        action = np.asarray([0, 0, 1, 0])
+        # action = np.random.uniform(low=-1, high=1, size=4)
         step_results = env.step(action)
         obs, reward, done, info = step_results
         print("Reward: {} Info: {}".format(reward, info))

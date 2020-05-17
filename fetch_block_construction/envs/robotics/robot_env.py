@@ -122,7 +122,6 @@ class RobotEnv(gym.GoalEnv):
     def render(self, mode='human', size=None):
         self._render_callback()
         if mode == 'rgb_array':
-            size=800
             # window size used for old mujoco-py:
             if size:
                 data = self.sim.render(size, size, camera_name="external_camera_0")

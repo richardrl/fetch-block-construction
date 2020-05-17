@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 for num_blocks in range(1, 25):
     for reward_type in ['sparse', 'dense', 'incremental', 'block1only']:
         for obs_type in ['dictimage', 'np', 'dictstate']:
-            for render_size in [42, 84]:
+            for render_size in [42, 84, 128, 800]:
                 for stack_only in [True, False]:
                     for case in ["Singletower", "Pyramid", "Multitower", "All"]:
                         initial_qpos = {

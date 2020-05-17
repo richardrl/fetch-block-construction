@@ -161,6 +161,8 @@ class FetchEnv(robot_env.RobotEnv):
                 'image_observation': image_obs.copy()
             }
         elif self.obs_type == 'dictstate':
+            image_obs = self.render(mode='rgb_array', size=self.render_size)
+
             obs = np.concatenate([
                 robot_state.copy(),
                 object_pos.copy(),
@@ -169,11 +171,14 @@ class FetchEnv(robot_env.RobotEnv):
                 object_velr.copy(),
                 object_rel_pos.copy(),
             ])
+            import pdb
+            pdb.set_trace()
             return {
                 'observation': obs.copy(),
                 'achieved_goal': achieved_goal.copy(),
                 'desired_goal': self.goal.copy(),
                 'robot_state': robot_state.copy(),
+                'image_observation': image_obs.copy()
             }
         elif self.obs_type == 'np':
             image_obs = self.render(mode='rgb_array', size=self.render_size)

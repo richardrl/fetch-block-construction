@@ -154,6 +154,7 @@ class FetchBlockConstructionEnv(fetch_env.FetchEnv, gym_utils.EzPickle):
             'desired_goal': self.goal.copy(),
         }
         # if self.obs_type == 'dictimage':
+
         if hasattr(self, "render_image_obs") and self.render_image_obs:
             return_dict['image_observation'] = self.render(mode='rgb_array')
 
