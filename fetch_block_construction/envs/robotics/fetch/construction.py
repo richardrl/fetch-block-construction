@@ -24,7 +24,7 @@ class FetchBlockConstructionEnv(fetch_env.FetchEnv, gym_utils.EzPickle):
         # Ensure we get the path separator correct on windows
         # MODEL_XML_PATH = os.path.join('fetch', F'stack{self.num_blocks}.xml')
 
-        with tempfile.NamedTemporaryFile(mode='wt', dir=F"{os.path.dirname(os.path.dirname(os.path.realpath(__file__)))}/assets/fetch/", delete=False, suffix=".xml") as fp:
+        with tempfile.NamedTemporaryFile(mode='wt', dir=F"{os.path.dirname(os.path.dirname(os.path.realpath(__file__)))}/assets/fetch/tmp/", delete=False, suffix=".xml") as fp:
             fp.write(generate_xml(self.num_blocks))
             MODEL_XML_PATH = fp.name
 

@@ -5,3 +5,4 @@ robotics-recorder-venv/
 .idea/
 __pycache__/
 *.pyc
+fetch_block_construction/envs/robotics/assets/fetch/tmp/

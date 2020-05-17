@@ -3,12 +3,12 @@ BASIC_COLORS = ["0 1 0", "1 1 0", "0.2 0.8 0.8", "0.8 0.2 0.8", "1.0 0.0 0.0", "
 
 base = '''<?xml version="1.0" encoding="utf-8"?>
 <mujoco>
-    <compiler angle="radian" coordinate="local" meshdir="../stls/fetch" texturedir="../textures"></compiler>
+    <compiler angle="radian" coordinate="local" meshdir="../../stls/fetch" texturedir="../../textures"></compiler>
     <option timestep="0.002">
         <flag warmstart="enable"></flag>
     </option>
 
-    <include file="shared.xml"></include>
+    <include file="../shared.xml"></include>
 
     <asset>
         {assets}
@@ -22,7 +22,7 @@ base = '''<?xml version="1.0" encoding="utf-8"?>
 
         </body>
 
-        <include file="robot.xml"></include>
+        <include file="../robot.xml"></include>
         
         <body pos="1.3 0.75 0.2" name="table0">
             <geom size="0.25 0.35 0.2" type="box" mass="2000" material="table_mat"></geom>
