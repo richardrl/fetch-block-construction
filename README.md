@@ -23,4 +23,15 @@ Building the Docker image is optional, but makes it much easier to continuously 
 
 ### Credits
 Initial stack environment code based on
-[gym-fetch-stack](https://github.com/CDMCH/gym-fetch-stack)
+[gym-fetch-stack](https://github.com/CDMCH/gym-fetch-stack
+
+
+### Citation
+If you find this code useful, please cide:
+    @inproceedings{li19relationalrl,
+      Author = {Li, Richard and
+      Jabri, Allan and Darrell, Trevor and Agrawal, Pulkit},
+      Title = {Towards Practical Multi-object Manipulation using Relational Reinforcement Learning},
+      Booktitle = {ICRA},
+      Year = {2020}
+    }
