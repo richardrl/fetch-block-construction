@@ -27,7 +27,8 @@ Initial stack environment code based on
 
 
 ### Citation
-If you find this code useful, please cide:
+If you find this code useful, please cite:
+
     @inproceedings{li19relationalrl,
       Author = {Li, Richard and
       Jabri, Allan and Darrell, Trevor and Agrawal, Pulkit},
